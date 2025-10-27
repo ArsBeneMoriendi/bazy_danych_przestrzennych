@@ -1,0 +1,11 @@
+cd C:\Program Files\PostgreSQL\18\bin 
+
+shp2pgsql -I -s 4326 C:\Users\lapto\Downloads\T2018_KAR_GERMANY\T2018_KAR_BUILDINGS.shp public.T2018_KAR_BUILDINGS | psql -d karlsruhe -U postgres
+shp2pgsql -I -s 4326 C:\Users\lapto\Downloads\T2019_KAR_GERMANY\T2019_KAR_BUILDINGS.shp public.T2019_KAR_BUILDINGS | psql -d karlsruhe -U postgres
+shp2pgsql -I -s 4326 C:\Users\lapto\Downloads\T2018_KAR_GERMANY\T2018_KAR_POI_TABLE.shp public.T2018_POI | psql -d karlsruhe -U postgres
+shp2pgsql -I -s 4326 C:\Users\lapto\Downloads\T2019_KAR_GERMANY\T2019_KAR_POI_TABLE.shp public.T2019_POI | psql -d karlsruhe -U postgres
+shp2pgsql -I -s 4326:3068 C:\Users\lapto\Downloads\T2019_KAR_GERMANY\T2019_KAR_STREETS.shp public.T2019_STREETS | psql -d karlsruhe -U postgres
+shp2pgsql -I -s 4326 C:\Users\lapto\Downloads\T2019_KAR_GERMANY\T2019_KAR_STREET_NODE.shp public.T2019_STREET_NODE | psql -d karlsruhe -U postgres
+shp2pgsql -I -s 4326 C:\Users\lapto\Downloads\T2019_KAR_GERMANY\T2019_KAR_LAND_USE_A.shp public.t2019_land_use_a | psql -d karlsruhe -U postgres
+shp2pgsql -I -s 4326 C:\Users\lapto\Downloads\T2019_KAR_GERMANY\T2019_KAR_RAILWAYS.shp public.t2019_railways | psql -d karlsruhe -U postgres
+shp2pgsql -I -s 4326 C:\Users\lapto\Downloads\T2019_KAR_GERMANY\T2019_KAR_WATER_LINES.shp public.t2019_water_lines | psql -d karlsruhe -U postgres
