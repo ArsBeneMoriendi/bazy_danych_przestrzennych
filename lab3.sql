@@ -1,3 +1,4 @@
+
 CREATE EXTENSION postgis;
 
 
@@ -42,7 +43,7 @@ FROM new_poi_2019 n
 WHERE EXISTS 
 (
 	SELECT 1 FROM changed_buildings cb
-	WHERE ST_DWithin(n.geom::geography, cb.geom::geography, 500)
+	WHERE ST_DWithin(n.geom::geography, cb.geom::geography, 500) -- dopisywane na podstawie układu odniesienia (w tym przypadku stopnie)
 )
 GROUP BY n.type ORDER BY cnt DESC;
 
@@ -63,7 +64,6 @@ ALTER TABLE public.streets_reprojected DROP COLUMN geom;
 ALTER TABLE public.streets_reprojected RENAME COLUMN geom_3068 TO geom;
 
 CREATE INDEX streets_reprojected_gix ON public.streets_reprojected USING GIST (geom);
-
 
 
 -- 4. Stwórz tabelę o nazwie ‘input_points’ i dodaj do niej dwa rekordy o geometrii punktowej.
