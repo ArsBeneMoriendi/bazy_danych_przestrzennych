@@ -97,5 +97,4 @@ WHERE NOT ST_HasArc(geom);
 
 
 
-TRUNCATE TABLE obiekty RESTART IDENTITY CASCADE;
 SELECT id, nazwa, ST_GeometryType(geom) FROM obiekty;
